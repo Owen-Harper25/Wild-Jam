@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://k0ddourjjjnl"]
+
+[ext_resource type="PackedScene" uid="uid://tfdgx4goff5d" path="res://block.tscn" id="1_gojnm"]
+
+[node name="Test level" type="Node2D" unique_id=1320657509]
+
+[node name="Block" parent="." unique_id=281869180 instance=ExtResource("1_gojnm")]
+position = Vector2(-7.6293945e-06, 584)
+scale = Vector2(19.68, 1)
+
+[node name="Block2" parent="." unique_id=302688530 instance=ExtResource("1_gojnm")]
+position = Vector2(-1152.0001, -632)
+scale = Vector2(1.64477, 18.049366)
+
+[node name="Block3" parent="." unique_id=531282949 instance=ExtResource("1_gojnm")]
+position = Vector2(1152.0001, -638)
+scale = Vector2(1.64477, 18.049366)
