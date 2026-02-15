@@ -13,7 +13,7 @@ config_version=5
 config/name="Game Jam"
 run/main_scene="uid://k0ddourjjjnl"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Sprites/icon.svg"
 
 [file_customization]
 

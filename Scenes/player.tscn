@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://oy67rn0cumj3"]
 
-[ext_resource type="Texture2D" uid="uid://barq67eed08is" path="res://icon.svg" id="1_4flbx"]
-[ext_resource type="Script" uid="uid://ek06d65x3iuq" path="res://player.gd" id="1_onrkg"]
-[ext_resource type="PackedScene" uid="uid://drewtx5c6ksub" path="res://vector_creator.tscn" id="3_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://barq67eed08is" path="res://Sprites/icon.svg" id="1_4flbx"]
+[ext_resource type="Script" uid="uid://ek06d65x3iuq" path="res://Scripts/player.gd" id="1_onrkg"]
+[ext_resource type="PackedScene" uid="uid://drewtx5c6ksub" path="res://Scenes/vector_creator.tscn" id="3_i3pqv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_onrkg"]
 radius = 64.0
