@@ -15,9 +15,16 @@ run/main_scene="uid://k0ddourjjjnl"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://Sprites/icon.svg"
 
+[autoload]
+
+AudioPlayer="*uid://dnblkmu6o1rhj"
+
 [file_customization]
 
 folder_colors={
+"res://SFX/": "purple",
+"res://Scenes/": "red",
+"res://Scripts/": "blue",
 "res://Sprites/": "pink"
 }
 

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dnblkmu6o1rhj"]
+
+[ext_resource type="AudioStream" uid="uid://c33rpeluqn45o" path="res://SFX/Game_Jam_90_Music-Trimmed.mp3" id="1_jvly4"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" unique_id=1394796399]
+stream = ExtResource("1_jvly4")
+max_distance = 100000000000.0
+attenuation = 1e-05
+panning_strength = 0.0
+bus = &"Music"
