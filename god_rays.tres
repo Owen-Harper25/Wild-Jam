@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bhswd56mmirf"]
+
+[ext_resource type="Shader" uid="uid://okf48axwkxq" path="res://god_rays2.gdshader" id="1_85atj"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_85atj")
+shader_parameter/ray_angle = 0.0
+shader_parameter/ray_position = -0.2
+shader_parameter/spread = 1.0
+shader_parameter/cutoff = 0.1
+shader_parameter/falloff = 0.618000029355
+shader_parameter/edge_fade = 0.15
+shader_parameter/speed = 1.5
+shader_parameter/ray1_density = 20.0
+shader_parameter/ray2_density = 20.0
+shader_parameter/ray2_intensity = 0.3
+shader_parameter/color = Vector4(1, 0.9, 0.65, 0.5)
+shader_parameter/hdr = true
+shader_parameter/seed = 5.0

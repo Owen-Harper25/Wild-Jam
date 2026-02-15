@@ -3,9 +3,14 @@
 [ext_resource type="Texture2D" uid="uid://dup0usdc3uaxy" path="res://Sprites/Old_Grandma_1.png" id="1_mmcc8"]
 [ext_resource type="AudioStream" uid="uid://c1l3tvgvepfln" path="res://SFX/angelic ahhh.mp3" id="2_w30ie"]
 [ext_resource type="AudioStream" uid="uid://bfgxy1xugqqww" path="res://SFX/Spotlight.mp3" id="3_5wyn5"]
+[ext_resource type="Material" uid="uid://bhswd56mmirf" path="res://god_rays.tres" id="4_5wyn5"]
+[ext_resource type="Shader" uid="uid://okf48axwkxq" path="res://god_rays2.gdshader" id="5_cljc8"]
+[ext_resource type="Shader" uid="uid://ccuy6m8w5mmbu" path="res://Scenes/water.gdshader" id="6_seej8"]
+[ext_resource type="Texture2D" uid="uid://7417gf8lqv18" path="res://Water Caustics.png" id="7_nmymg"]
+[ext_resource type="Texture2D" uid="uid://drn4yubj4lc4p" path="res://Noise 3.webp" id="8_2thbg"]
 
 [sub_resource type="Gradient" id="Gradient_mmcc8"]
-colors = PackedColorArray(1, 1, 0.8627451, 1, 1, 1, 1, 0)
+colors = PackedColorArray(0.5568628, 0.5137255, 0.44705883, 1, 1, 1, 1, 0)
 
 [sub_resource type="Animation" id="Animation_1s3mq"]
 length = 0.001
@@ -80,6 +85,30 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Line2D:begin_cap_mode")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Line2D:end_cap_mode")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
 }
 
 [sub_resource type="Animation" id="Animation_w30ie"]
@@ -157,12 +186,68 @@ tracks/5/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Line2D:begin_cap_mode")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Line2D:end_cap_mode")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5wyn5"]
 _data = {
 &"RESET": SubResource("Animation_1s3mq"),
 &"light beam": SubResource("Animation_w30ie")
 }
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_seej8"]
+shader = ExtResource("5_cljc8")
+shader_parameter/ray_angle = 0.3
+shader_parameter/ray_position = -0.2
+shader_parameter/spread = 0.5
+shader_parameter/cutoff = 0.1
+shader_parameter/falloff = 0.2
+shader_parameter/edge_fade = 0.15
+shader_parameter/speed = 1.0
+shader_parameter/ray1_density = 8.0
+shader_parameter/ray2_density = 30.0
+shader_parameter/ray2_intensity = 0.3
+shader_parameter/color = Vector4(1, 0.9, 0.65, 0.8)
+shader_parameter/hdr = false
+shader_parameter/seed = 5.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nmymg"]
+shader = ExtResource("6_seej8")
+shader_parameter/waterNoise = ExtResource("8_2thbg")
+shader_parameter/waterDistortionNoise = ExtResource("7_nmymg")
+shader_parameter/waterColor = Color(0.08627451, 0.08627451, 0.16078432, 1)
+shader_parameter/colorCorection = 0.35
+shader_parameter/distortionForce = 0.0110000005225
+shader_parameter/WDBrightness = 1.2500000186265
+shader_parameter/WDFreq = 0.20000000298023
+shader_parameter/WDSize = 0.60000002384186
+shader_parameter/WDSpeed = 4.0
+shader_parameter/tiling = Vector2(1, 2)
+shader_parameter/offSetSpeed = Vector2(0.1, 0.1)
+shader_parameter/backGroundDirX = 0.01
+shader_parameter/backGroundDirY = 0.01
 
 [node name="CanvasModulate" type="CanvasModulate" unique_id=1744778528]
 
@@ -172,6 +257,7 @@ offset_bottom = 648.0
 color = Color(0.015012277, 0.021016508, 0.099477045, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=570080434]
+z_index = 3
 position = Vector2(576.00006, 384.00003)
 scale = Vector2(0.42578125, 0.42578125)
 texture = ExtResource("1_mmcc8")
@@ -184,6 +270,8 @@ position = Vector2(576, 0)
 scale = Vector2(8.45, 1)
 points = PackedVector2Array(0, 0, 0, 0, 0, 0)
 gradient = SubResource("Gradient_mmcc8")
+begin_cap_mode = 2
+end_cap_mode = 2
 
 [node name="Angel" type="AudioStreamPlayer2D" parent="." unique_id=1760625889]
 stream = ExtResource("2_w30ie")
@@ -194,3 +282,31 @@ stream = ExtResource("3_5wyn5")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1588420484]
 libraries/ = SubResource("AnimationLibrary_5wyn5")
 autoplay = &"light beam"
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1591941400]
+z_index = 1
+material = ExtResource("4_5wyn5")
+offset_left = -144.0
+offset_top = -16.0
+offset_right = 1480.0
+offset_bottom = 456.0
+
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=440862668]
+visible = false
+material = SubResource("ShaderMaterial_seej8")
+offset_left = 576.0
+offset_right = 1232.0
+offset_bottom = 289.0
+
+[node name="Water" type="ColorRect" parent="." unique_id=970818858]
+material = SubResource("ShaderMaterial_nmymg")
+offset_top = 328.0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="StagWater" type="ColorRect" parent="." unique_id=284174998]
+modulate = Color(1, 1, 1, 0.21568628)
+offset_top = 304.0
+offset_right = 1152.0
+offset_bottom = 360.0
+color = Color(0.050980393, 0.050980393, 0.12941177, 1)
