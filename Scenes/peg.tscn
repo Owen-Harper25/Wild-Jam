@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d3graqxfthia0"]
 
 [ext_resource type="Script" uid="uid://yx2gqyf1l1sq" path="res://Scripts/peg.gd" id="1_1pwoe"]
-[ext_resource type="Texture2D" uid="uid://barq67eed08is" path="res://Sprites/icon.svg" id="1_y34qd"]
+[ext_resource type="Texture2D" uid="uid://barq67eed08is" path="res://Assets/Sprites/icon.svg" id="1_y34qd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1pwoe"]
 radius = 24.0

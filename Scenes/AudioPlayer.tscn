@@ -4,7 +4,6 @@
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" unique_id=1394796399]
 stream = ExtResource("1_jvly4")
-autoplay = true
 max_distance = 100000000000.0
 attenuation = 1e-05
 panning_strength = 0.0

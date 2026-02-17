@@ -11,22 +11,29 @@ config_version=5
 [application]
 
 config/name="Game Jam"
-run/main_scene="uid://b25a2beyym67k"
+run/main_scene="uid://cw4eow4wd6ue1"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://Sprites/icon.svg"
+boot_splash/bg_color=Color(0.015686275, 0.019607844, 0.09803922, 1)
+config/icon="res://Assets/Sprites/icon.svg"
 
 [autoload]
 
 AudioPlayer="*uid://dnblkmu6o1rhj"
+TransitionScene="*uid://bnnt3i717h6np"
+SceneManager="*uid://bq1ktad2w0obg"
 
 [file_customization]
 
 folder_colors={
+"res://Assets/Sprites/": "pink",
 "res://SFX/": "purple",
 "res://Scenes/": "red",
-"res://Scripts/": "blue",
-"res://Sprites/": "pink"
+"res://Scripts/": "blue"
 }
+
+[gui]
+
+theme/custom_font="uid://yfjbyya07o6c"
 
 [input]
 
@@ -43,3 +50,4 @@ ui_touch={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+environment/defaults/default_clear_color=Color(0.015686275, 0.019607844, 0.09803922, 1)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8a0375mginqw"
-path="res://.godot/imported/Ball.png-4e6e58f62343d577c3d22d908457c6a4.ctex"
+uid="uid://cbhk7wofak4dq"
+path="res://.godot/imported/Chubby-Man_1.png-ba8dd192045adb31dcd3503ccb581761.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Ball.png"
-dest_files=["res://.godot/imported/Ball.png-4e6e58f62343d577c3d22d908457c6a4.ctex"]
+source_file="res://Assets/Sprites/Chubby-Man_1.png"
+dest_files=["res://.godot/imported/Chubby-Man_1.png-ba8dd192045adb31dcd3503ccb581761.ctex"]
 
 [params]
 
