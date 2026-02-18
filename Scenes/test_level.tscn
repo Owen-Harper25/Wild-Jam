@@ -19,6 +19,7 @@ position = Vector2(1152.0001, -638)
 scale = Vector2(1.64477, 18.049366)
 
 [node name="Player" parent="." unique_id=1124770313 instance=ExtResource("2_rsyfn")]
+z_index = 3
 
 [node name="Peg" parent="." unique_id=1305176497 instance=ExtResource("3_7w7ni")]
 position = Vector2(384, 320)

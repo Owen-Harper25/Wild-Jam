@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dup0usdc3uaxy"
-path="res://.godot/imported/Old_Grandma_1.png-10b6cdc11464c2c935d78092f5d0475e.ctex"
+uid="uid://7417gf8lqv18"
+path="res://.godot/imported/Water Caustics.png-1c93ab4c4b941799b210722fa08ba3fe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Old_Grandma_1.png"
-dest_files=["res://.godot/imported/Old_Grandma_1.png-10b6cdc11464c2c935d78092f5d0475e.ctex"]
+source_file="res://Assets/Sprites/Water Caustics.png"
+dest_files=["res://.godot/imported/Water Caustics.png-1c93ab4c4b941799b210722fa08ba3fe.ctex"]
 
 [params]
 

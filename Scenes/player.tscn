@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://oy67rn0cumj3"]
 
 [ext_resource type="Script" uid="uid://ek06d65x3iuq" path="res://Scripts/player.gd" id="1_onrkg"]
-[ext_resource type="Texture2D" uid="uid://8a0375mginqw" path="res://Sprites/Ball.png" id="2_6t5aa"]
-[ext_resource type="Shader" path="res://SFX/GhostlyShine.gdshader" id="2_vgqql"]
+[ext_resource type="Texture2D" uid="uid://8a0375mginqw" path="res://Assets/Sprites/Ball.png" id="2_6t5aa"]
+[ext_resource type="Shader" uid="uid://xemu4pow20cf" path="res://SFX/GhostlyShine.gdshader" id="2_vgqql"]
 [ext_resource type="PackedScene" uid="uid://drewtx5c6ksub" path="res://Scenes/vector_creator.tscn" id="3_i3pqv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_onrkg"]
@@ -11,7 +11,7 @@ radius = 64.0
 [sub_resource type="Gradient" id="Gradient_vgqql"]
 colors = PackedColorArray(0.09048521, 0.07676741, 1, 1, 0.39309475, 0.6271408, 1, 1)
 
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_fkybt"]
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vgqql"]
 gradient = SubResource("Gradient_vgqql")
 fill_from = Vector2(0, 0.56565654)
 fill_to = Vector2(0.59090906, 0.65656567)
@@ -20,7 +20,7 @@ fill_to = Vector2(0.59090906, 0.65656567)
 shader = ExtResource("2_vgqql")
 shader_parameter/pixelation = Vector2(256, 256)
 shader_parameter/gradient_steps = 256.0
-shader_parameter/gradient = SubResource("GradientTexture2D_fkybt")
+shader_parameter/gradient = SubResource("GradientTexture2D_vgqql")
 shader_parameter/spread = 0.24700001103398
 shader_parameter/size = 0.5510000736725
 shader_parameter/speed = 1.0
@@ -31,6 +31,16 @@ shader_parameter/core_intensity = 2.0
 shader_parameter/hdr = false
 shader_parameter/seed = 1.0
 
+[sub_resource type="Gradient" id="Gradient_fkybt"]
+offsets = PackedFloat32Array(0, 0.25301206, 0.53614455)
+colors = PackedColorArray(1, 1, 1, 1, 0.47397572, 0.47397572, 0.47397572, 1, 0.06504071, 0.06504071, 0.06504071, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_x3wgy"]
+gradient = SubResource("Gradient_fkybt")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0, 0)
+
 [node name="Player" type="RigidBody2D" unique_id=1124770313]
 mass = 0.2
 lock_rotation = true
@@ -39,8 +49,9 @@ script = ExtResource("1_onrkg")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1014575830]
 shape = SubResource("CircleShape2D_onrkg")
 
-[node name="Camera2D" type="Camera2D" parent="CollisionShape2D" unique_id=531905009]
-zoom = Vector2(0.5, 0.5)
+[node name="Camera2D" type="Camera2D" parent="CollisionShape2D" unique_id=1425818405]
+enabled = false
+zoom = Vector2(0.495, 0.495)
 position_smoothing_enabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1555124003]
@@ -51,7 +62,10 @@ texture = ExtResource("2_6t5aa")
 [node name="VectorCreator" parent="." unique_id=1929276185 instance=ExtResource("3_i3pqv")]
 
 [node name="PointLight2D" type="PointLight2D" parent="." unique_id=1842072822]
+position = Vector2(1.0000153, 7.6293945e-06)
+scale = Vector2(5.88, 5.88)
+color = Color(0.4, 0.11764706, 1, 1)
 energy = 3.02
-texture = ExtResource("2_6t5aa")
+texture = SubResource("GradientTexture2D_x3wgy")
 
 [connection signal="vector_created" from="VectorCreator" to="." method="launch"]
